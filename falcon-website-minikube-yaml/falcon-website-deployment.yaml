@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: falcon-website-deployment
+spec:
+   replicas: 2
+   selector:
+      matchLabels:
+         app: falcon-website
+   template:
+      metadata:
+         labels:
+            app: falcon-website
+      spec:
+         containers:
+         - name: falcon-website-container
+           image: drcrane/falcon-website:2-b47a015
+           env:
+           - name: PORT
+             value: "8080"
+           ports:
+           - containerPort: 8080
+         tolerations:
+         - effect: NoSchedule
+           key: dedicated
+           value: test-team
+

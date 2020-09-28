@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: falcon-website-service-lb
+spec:
+  selector:
+    app: falcon-website
+  ports:
+  - protocol: TCP
+    port: 8989
+    targetPort: 8080
+  clusterIP: 10.100.126.72 
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.122.107
+

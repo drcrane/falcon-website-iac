@@ -1,0 +1,15 @@
+*
+!Makefile
+!Dockerfile
+!*.*
+!*/
+*.o
+*.a
+id_rsa
+id_rsa.pub
+*.cert
+*.key
+*.pem
+*.pfx
+debian-minikube-libvirt/firstboot.sh.b64
+
